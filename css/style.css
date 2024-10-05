@@ -364,5 +364,87 @@ footer {
 
 model-viewer {
   width: 100%;
-  height: 400px;
+  height: 400pt;
 }
+
+.video-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15pt;
+  box-shadow: 0 2pt 8pt rgba(0, 0, 0, 0.2);
+}
+
+.rounded-video video {
+  width: 100%;
+  height: auto; 
+  display: block;
+  border-radius: 15pt;
+}
+
+.video-text {
+
+  text-align: center;
+  font-size: 14pt;
+
+}
+
+.images_gallery {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15pt;
+  padding: 10pt;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  height: auto;
+  border-radius: 15pt;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16pt;
+  color: white;
+  font-size: 30pt;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+#prevArrow {
+  left: 0;
+}
+
+#nextArrow {
+  right: 0;
+}
+
