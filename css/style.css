@@ -1,0 +1,368 @@
+@font-face {
+  font-family: '911 Porscha';
+  src: url('../css/fonts/911-porscha-2.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Oxygen Mono Regular';
+  src: url('../css/fonts/OxygenMono-Regular.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oxygen Mono Regular', sans-serif;
+  overflow-x: hidden;
+  font-size: 14pt;
+  background-color: rgb(235, 235, 235);
+}
+
+#logo {
+  font-size: 35pt;
+  font-family: '911 Porscha', sans-serif;
+  text-align: center;
+  color: black;
+}
+
+.navbar {
+  list-style-type: none;
+  padding: 0;
+  margin: 15pt 0 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20pt;
+  position: relative;
+  z-index: 15;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar li:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: -11.25pt;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12pt;
+  color: black;
+}
+
+.navbar a:hover {
+  color: #888;
+}
+
+h1 {
+
+  text-align: center;
+}
+
+#hero {
+  height: calc(100vh - 100pt);
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero video {
+  width: 100vw; 
+  height: 100%; 
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  object-fit: cover; 
+  z-index: 5;
+}
+
+#hero::after {
+  width: 100%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+#hero .caption {
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  color: white;
+}
+
+#hero .caption h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#hero .caption h2 {
+  font-weight: bold;
+}
+
+.models_images {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.models_images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+}
+
+.models_images::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); 
+  transition: background-color 0.5s ease;
+  z-index: 5;
+}
+
+.models_images:hover::before {
+  background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.models_images:hover img {
+  transform: scale(1.1); 
+  opacity: 0.6; 
+}
+
+.four.columns img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text_main {
+
+  padding-top: 15pt;
+  text-align: center;
+
+}
+
+.center_text {
+  text-align: center;
+}
+
+.top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  font-weight: bold;
+  padding: 5pt 13pt;
+  font-size: 30pt;
+  text-align: center;
+  z-index: 10;
+  transition: opacity 0.5s ease;
+}
+
+.models_images:hover .top-left {
+  opacity: 0;
+}
+
+.models_images .hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18pt;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  z-index: 15;
+  transition: opacity 0.5s ease;
+}
+
+.models_images:hover .hover-text {
+  opacity: 1;
+}
+
+
+@media (max-width: 600px) {
+  .top-left {
+    font-size: 20pt;
+  }
+  .hover-text {
+    font-size: 14pt;
+  }
+}
+@media (min-width: 601px) and (max-width: 1200px) {
+  .top-left {
+    font-size: 25pt;
+  }
+  .hover-text {
+    font-size: 16pt;
+  }
+}
+@media (min-width: 1201px) {
+  .top-left {
+    font-size: 30pt;
+  }
+  .hover-text {
+    font-size: 18pt;
+  }
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: calc(100% * 3);
+}
+
+
+.slide {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  padding: 10pt;
+  background-color: rgba(0,0,0, 0);
+  border-radius: 50%;
+}
+
+.prev {
+  left: 10pt;
+}
+
+.next {
+  right: 10pt;
+}
+
+.six.columns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.models_slider {
+  text-align: center;
+  font-size: 21pt;
+
+}
+
+.porsche-img {
+  width: 100%;
+  height: auto; 
+  display: block; 
+  border-radius: 10pt;
+}
+
+
+.zoom {
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden; 
+  height: 280pt;
+}
+
+.scaled_images {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 10pt;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10pt;
+  color: white;
+  text-align: left;
+  font-size: 16pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-text p {
+  margin: 0;
+}
+
+.arrow {
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.scaled_images:hover {
+  transform: scale(1.05);
+
+}
+
+footer {
+  background-color: rgb(44, 44, 44);
+  color: white;
+  padding: 20pt 0;
+  margin-top: 16pt;
+  font-size: 12pt;
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+  display: flex; 
+  justify-content: flex-end;
+  gap: 18pt;
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  color: darkgray;
+}
+
+model-viewer {
+  width: 100%;
+  height: 400px;
+}
